@@ -62,7 +62,7 @@ export const App = () => {
 
   // !=================================Redux======================================
 
-  const test = useSelector(state => state.contacts);
+  // const test = useSelector(state => state.contacts);
 
   return (
     <>
