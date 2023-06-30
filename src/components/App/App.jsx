@@ -12,7 +12,7 @@ import {
 import { nanoid } from 'nanoid';
 import Notiflix from 'notiflix';
 
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 
 export const App = () => {
   const [contacts, setContacts] = useState(
