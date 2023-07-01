@@ -1,4 +1,5 @@
 import { createSlice, nanoid } from '@reduxjs/toolkit';
+import Notiflix from 'notiflix';
 
 const contactsInitialState = [
   { id: 'AXZJ6dTYtrgo1GxZ-CeYj', name: 'Rosie Simpson', number: '12344543' },
@@ -27,7 +28,10 @@ const contactsSlice = createSlice({
     },
     removeContact(state, action) {
       const index = state.findIndex(contact => contact.id === action.payload);
+
       state.splice(index, 1);
+
+      Notiflix.Notify.info(`Contact  has been deleted`);
     },
   },
 });
