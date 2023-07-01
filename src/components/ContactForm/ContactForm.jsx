@@ -1,6 +1,6 @@
 // !===============================redux =========================
 import { useDispatch } from 'react-redux';
-import { addContact } from '../../redux/actions';
+import { addContact } from 'redux/contactsSlice';
 import { Form, Input, Button } from './ContactForm.styled';
 
 export const ContactFormRedux = () => {
@@ -8,11 +8,12 @@ export const ContactFormRedux = () => {
 
   const handleChangeInput = event => {
     event.preventDefault();
-    const name = event.target.elements.name.value;
+    const form = event.target;
+    const name = form.elements.name.value;
     const number = event.target.elements.number.value;
 
     dispatch(addContact(name, number));
-    // Form.reset();
+    form.reset();
 
     // console.log(name);
     // console.log(number);

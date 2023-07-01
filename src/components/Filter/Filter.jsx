@@ -1,15 +1,13 @@
 // !=============redux============
 
 import { useDispatch } from 'react-redux';
-import { filter } from '../../redux/actions';
+import { filter } from 'redux/filterSlice';
 import { Input } from './Filter.styled';
 
 export const FilterRedux = () => {
   const dispatch = useDispatch();
   const handleChangeFilterInput = event => {
     dispatch(filter(event.target.value));
-
-    // console.log(event.target.value);
   };
 
   return (
