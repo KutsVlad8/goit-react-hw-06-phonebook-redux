@@ -1,10 +1,16 @@
 import Styled from '@emotion/styled';
 
 export const ContactList = Styled.ul`
+width: 350px;
 list-style: none;
-    padding: 0;
-    margin-top: 0;
-        margin-left: 30px;
+padding: 0;
+margin-top: 0;
+margin-left: auto;
+margin-right: auto;
+border: 1px solid #1f76c1;
+border-radius: 5px;
+padding: 5px;
+box-shadow: rgb(26 25 24 / 50%) 2px 2px 5px 2px;
 
 `;
 

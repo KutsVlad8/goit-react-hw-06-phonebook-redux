@@ -28,6 +28,7 @@ export const FormContainer = Styled.div`
     height: min-content;
     border: 1px solid #1f76c1;
     border-radius: 5px;
+    box-shadow: rgb(26 25 24 / 50%) 2px 2px 2px 2px;
 `;
 
 export const LeftContainer = Styled.div`
@@ -35,6 +36,7 @@ width: 400px;
 border: 1px solid #1f76c1;
 padding: 10px;
 border-radius: 5px;
+box-shadow: rgb(26 25 24 / 50%) 2px 2px 2px 2px;
 `;
 
 export const Template = Styled.p`
