@@ -1,12 +1,15 @@
 // !=============redux============
-import { useSelector } from 'react-redux';
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { removeContact } from 'redux/contactsSlice';
+import { getContacts, getFilter } from 'redux/selectors';
 import { ContactList, ContactListItem, Button } from './ContactsList.styled';
 
 export const ContactsListRedux = () => {
-  const contacts = useSelector(state => state.contacts);
-  const filter = useSelector(state => state.filter.query);
+  const contacts = useSelector(getContacts);
+  const filter = useSelector(getFilter);
+  console.log(contacts);
+  console.log(filter);
+
   const dispatch = useDispatch();
 
   const onDeleteContact = id => {

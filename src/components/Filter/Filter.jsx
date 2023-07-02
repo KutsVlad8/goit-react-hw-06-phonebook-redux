@@ -6,16 +6,13 @@ import { Input } from './Filter.styled';
 
 export const FilterRedux = () => {
   const dispatch = useDispatch();
+
   const handleChangeFilterInput = event => {
     dispatch(filter(event.target.value));
   };
 
   return (
-    <Input
-      type="text"
-      onChange={handleChangeFilterInput}
-      placeholder="find contact"
-    />
+    <Input type="text" placeholder="name" onChange={handleChangeFilterInput} />
   );
 };
 
