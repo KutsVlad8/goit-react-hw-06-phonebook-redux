@@ -43,21 +43,21 @@ export const App = () => {
 //   );
 //   const [filter, setFilter] = useState('');
 
-//   const addContact = data => {
-//     const oldContact = contacts.map(oldContact =>
-//       oldContact.name.toLowerCase()
-//     );
+// const addContact = data => {
+//   const oldContact = contacts.map(oldContact =>
+//     oldContact.name.toLowerCase()
+//   );
 
-//     if (oldContact.includes(data.name.toLowerCase())) {
-//       return Notiflix.Notify.failure(`${data.name} is alredy in contacts`);
-//     }
+// if (oldContact.includes(data.name.toLowerCase())) {
+//   return Notiflix.Notify.failure(`${data.name} is alredy in contacts`);
+// }
 
 //     const newContact = { id: nanoid(2), ...data };
 
 //     setContacts([...contacts, newContact]);
 
-//     Notiflix.Notify.success(`${data.name} contact has been added `);
-//   };
+// Notiflix.Notify.success(`${data.name} contact has been added `);
+// };
 
 //   const deleteContact = (contactId, name) => {
 //     setContacts(contacts.filter(contact => contact.id !== contactId));

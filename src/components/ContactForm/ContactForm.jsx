@@ -1,9 +1,12 @@
 // !===============================redux =========================
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/contactsSlice';
+import { getContacts } from '../../redux/selectors';
 import { Form, Input, Button } from './ContactForm.styled';
+import Notiflix from 'notiflix';
 
 export const ContactFormRedux = () => {
+  const contacts = useSelector(getContacts);
   const dispatch = useDispatch();
 
   const handleChangeInput = event => {
@@ -12,11 +15,16 @@ export const ContactFormRedux = () => {
     const name = form.elements.name.value;
     const number = event.target.elements.number.value;
 
-    dispatch(addContact(name, number));
-    form.reset();
+    const oldContact = contacts.map(oldContact =>
+      oldContact.name.toLowerCase()
+    );
 
-    // console.log(name);
-    // console.log(number);
+    if (oldContact.includes(name.toLowerCase())) {
+      return Notiflix.Notify.failure(`${name} is alredy in contacts`);
+    }
+    dispatch(addContact(name, number));
+    Notiflix.Notify.success(`Contact ${name}  has been added `);
+    form.reset();
   };
 
   return (

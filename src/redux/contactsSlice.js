@@ -1,5 +1,4 @@
 import { createSlice, nanoid } from '@reduxjs/toolkit';
-import Notiflix from 'notiflix';
 
 const contactsInitialState = {
   contacts: [
@@ -34,8 +33,6 @@ const contactsSlice = createSlice({
       );
 
       state.contacts.splice(index, 1);
-
-      Notiflix.Notify.info(`Contact  has been deleted`);
     },
   },
 });
