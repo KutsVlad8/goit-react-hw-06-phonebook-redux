@@ -2,7 +2,8 @@
 
 import { useDispatch } from 'react-redux';
 import { filter } from 'redux/filterSlice';
-import { Input } from './Filter.styled';
+import { Input, Label } from './Filter.styled';
+import { nanoid } from '@reduxjs/toolkit';
 
 export const FilterRedux = () => {
   const dispatch = useDispatch();
@@ -11,8 +12,18 @@ export const FilterRedux = () => {
     dispatch(filter(event.target.value));
   };
 
+  const filterInputId = nanoid(2);
+
   return (
-    <Input type="text" placeholder="name" onChange={handleChangeFilterInput} />
+    <>
+      <Label htmlFor={filterInputId}>Filter contacts</Label>
+      <Input
+        id={filterInputId}
+        type="text"
+        placeholder="search"
+        onChange={handleChangeFilterInput}
+      />
+    </>
   );
 };
 

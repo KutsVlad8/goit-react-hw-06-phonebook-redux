@@ -1,5 +1,11 @@
 import Styled from '@emotion/styled';
 
+export const Label = Styled.label`
+margin-bottom: 5px;
+margin-left: 30px;
+color:#1f76c1;
+`;
+
 export const Input = Styled.input`
 display: block;
 width: 350px;

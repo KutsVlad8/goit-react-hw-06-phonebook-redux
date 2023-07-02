@@ -28,7 +28,6 @@ export const ContactsListRedux = () => {
       contact.name.toLowerCase().includes(normalizeFilter)
     );
   };
-  console.log(contacts.length);
 
   const visibleContacts = getVisibleContacts();
 

@@ -7,21 +7,19 @@ align-items: center;
 `;
 
 export const Label = Styled.label`
-margin-bottom: 5px;
-margin-right: auto;
-margin-left: 20px;
-color:#1f76c1;
+    margin-bottom: 5px;
+    color: #1f76c1;
 
 `;
 
 export const Input = Styled.input`
-display: block;
-width: 350px;
-height: 30px;
-margin-bottom: 10px;
-border: none;
-border-bottom: 2px solid #1f76c1;
-color: #1f76c1;
+    display: block;
+    width: 350px;
+    height: 30px;
+    margin-bottom: 15px;
+    border: none;
+    border-bottom: 2px solid #1f76c1;
+    color: #1f76c1;
 
 &:focus{
     outline:none;

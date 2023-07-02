@@ -31,6 +31,7 @@ export const App = () => {
           <LeftContainer>
             <Title>Contacts</Title>
             <FilterRedux />
+
             <ContactsListRedux />
           </LeftContainer>
         )}
