@@ -5,13 +5,18 @@ import {
   Head,
   FormContainer,
   LeftContainer,
+  Template,
 } from './App.styled';
 
 import { ContactFormRedux } from '../ContactForm/ContactForm';
 import { ContactsListRedux } from '../ContactList/ContactsList';
 import { FilterRedux } from '../Filter/Filter';
+import { getContacts } from 'redux/selectors';
+import { useSelector } from 'react-redux';
+// import Footer from 'components/Footer/Footer';
 
 export const App = () => {
+  const contacts = useSelector(getContacts);
   return (
     <>
       <Head>PhoneBook</Head>
@@ -20,12 +25,17 @@ export const App = () => {
           <ContactFormRedux />
         </FormContainer>
 
-        <LeftContainer>
-          <Title>Contacts</Title>
-          <FilterRedux />
-          <ContactsListRedux />
-        </LeftContainer>
+        {contacts.length === 0 ? (
+          <Template>add new contact</Template>
+        ) : (
+          <LeftContainer>
+            <Title>Contacts</Title>
+            <FilterRedux />
+            <ContactsListRedux />
+          </LeftContainer>
+        )}
       </Container>
+      {/* <Footer /> */}
     </>
   );
 };

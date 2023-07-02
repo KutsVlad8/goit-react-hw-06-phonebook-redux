@@ -7,7 +7,10 @@ align-items: center;
 `;
 
 export const Label = Styled.label`
-margin-bottom: 10px;
+margin-bottom: 5px;
+margin-right: auto;
+margin-left: 20px;
+color:#1f76c1;
 
 `;
 
@@ -16,12 +19,37 @@ display: block;
 width: 350px;
 height: 30px;
 margin-bottom: 10px;
-border-radius:5px
+border: none;
+border-bottom: 2px solid #1f76c1;
+color: #1f76c1;
+
+&:focus{
+    outline:none;
+	border: 1px solid #1f76c1;
+    border-radius:5px;
+   
+}
+
+ &::placeholder {
+    font: inherit;
+    font-size: 16px;
+    color:#1f76c1;
+  }
 `;
 
 export const Button = Styled.button`
-display: block;
-width: 100px;
-height: 30px;
-cursor: pointer;
+display: inline-block;
+    height: 28px;
+    background-color: white;
+    color: #1f76c1;
+    border: 1px solid #1f76c1;
+    border-radius: 3px;
+    cursor: pointer;
+    outline: none;
+
+&:focus,&:hover{
+	background-color: #1f76c1;
+    color: white;
+	
+}
 `;

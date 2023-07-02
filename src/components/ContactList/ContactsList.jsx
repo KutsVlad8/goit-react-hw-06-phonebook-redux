@@ -2,7 +2,12 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { removeContact } from 'redux/contactsSlice';
 import { getContacts, getFilter } from 'redux/selectors';
-import { ContactList, ContactListItem, Button } from './ContactsList.styled';
+import {
+  ContactList,
+  ContactListItem,
+  Text,
+  Button,
+} from './ContactsList.styled';
 import Notiflix from 'notiflix';
 
 export const ContactsListRedux = () => {
@@ -23,6 +28,7 @@ export const ContactsListRedux = () => {
       contact.name.toLowerCase().includes(normalizeFilter)
     );
   };
+  console.log(contacts.length);
 
   const visibleContacts = getVisibleContacts();
 
@@ -30,7 +36,9 @@ export const ContactsListRedux = () => {
     <ContactList>
       {visibleContacts.map(contact => (
         <ContactListItem key={contact.id}>
-          {contact.name}: {contact.number}
+          <Text>
+            {contact.name} : {contact.number}
+          </Text>
           <Button onClick={() => onDeleteContact(contact)}>delete</Button>
         </ContactListItem>
       ))}
